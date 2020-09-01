@@ -1,1 +1,4 @@
 *.code-workspace
+*.import
+.import/
+.vscode/
