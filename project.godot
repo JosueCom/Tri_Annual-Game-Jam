@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://src/Entities/Entity.gd"
+}, {
+"base": "Reference",
+"class": "State",
+"language": "GDScript",
+"path": "res://src/Utils/State.gd"
+}, {
+"base": "Reference",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://src/Utils/StateMachine.gd"
+} ]
 _global_script_class_icons={
-
+"Entity": "",
+"State": "",
+"StateMachine": ""
 }
 
 [application]
