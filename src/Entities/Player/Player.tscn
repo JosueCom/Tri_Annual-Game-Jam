@@ -7,20 +7,27 @@
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
-gravity = 300.0
+gravity = 350.0
 mass = 1.0
 moving_force = {
 "air": 320,
 "ground": 500
 }
+friction = {
+"air": 250,
+"ground": 250
+}
 jumping_force = 400.0
 terminal_speed = Vector2( 500, 1000 )
 
 [node name="WetSpot" type="Particles2D" parent="."]
-position = Vector2( -6.06262, -8.12643 )
-scale = Vector2( 0.680001, 0.52 )
+position = Vector2( -0.306976, -0.283691 )
+scale = Vector2( 0.680002, 0.52 )
 emitting = false
+amount = 5
+lifetime = 1.5
 local_coords = false
+draw_order = 1
 process_material = ExtResource( 3 )
 texture = ExtResource( 4 )
 

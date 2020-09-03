@@ -55,6 +55,10 @@ class Falling extends State:
 
 class Idle extends State:
 		
+	func _enter() -> void:
+		_entity.get_node("WetSpot").emitting = true
+		_entity.get_node("WetSpot").one_shot = true
+
 	func _physics_process_(delta: float) -> void:
 		_entity.decelerate(delta, _entity.friction.ground)
 		
@@ -65,6 +69,10 @@ class Idle extends State:
 			_state_machine.travel("jumping")
 		elif not _entity.is_on_floor():
 			_state_machine.travel("falling")
+	
+	func _exit() -> void:
+		_entity.get_node("WetSpot").emitting = false
+		_entity.get_node("WetSpot").one_shot = false
 
 class Jumping extends State:
 	var dir := Vector2.ZERO
