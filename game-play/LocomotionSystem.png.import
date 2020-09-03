@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sand.png-ec1bd1ef688883b2ca501c4ff7ccbc4a.stex"
+path="res://.import/LocomotionSystem.png-e0d2f7a281c98a7cdaf7d708acbe3f77.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/env/sand.png"
-dest_files=[ "res://.import/sand.png-ec1bd1ef688883b2ca501c4ff7ccbc4a.stex" ]
+source_file="res://game-play/LocomotionSystem.png"
+dest_files=[ "res://.import/LocomotionSystem.png-e0d2f7a281c98a7cdaf7d708acbe3f77.stex" ]
 
 [params]
 
@@ -24,11 +24,11 @@ flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
