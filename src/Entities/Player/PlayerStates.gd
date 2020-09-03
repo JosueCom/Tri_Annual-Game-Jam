@@ -62,6 +62,9 @@ class Idle extends State:
 
 class Jumping extends State:
 	var dir := Vector2.ZERO
+
+	func _enter() -> void:
+		_entity.jump()
 		
 	func _physics_process_(delta: float) -> void:
 		_entity.move(dir, delta, _entity.moving_force.air)
