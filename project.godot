@@ -33,14 +33,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Tri Annual Game Jam"
-run/main_scene="res://src/maps/TestStage.tscn"
+run/main_scene="res://src/MainScreen.tscn"
 config/icon="res://icon.png"
-
-[display]
-
-window/size/resizable=false
 
 [rendering]
 
-environment/default_clear_color=Color( 0.298039, 0.635294, 0.843137, 1 )
 environment/default_environment="res://default_env.tres"
