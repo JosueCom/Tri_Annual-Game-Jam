@@ -36,10 +36,6 @@ config/name="Tri Annual Game Jam"
 run/main_scene="res://src/MainScreen.tscn"
 config/icon="res://icon.png"
 
-[display]
-
-window/size/resizable=false
-
 [input]
 
 move_right={
