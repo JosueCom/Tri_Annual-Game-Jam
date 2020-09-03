@@ -162,16 +162,10 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 
 [node name="TestStage" type="Node2D"]
 
-[node name="Background" type="Node" parent="."]
-
-[node name="Clouds" type="TileMap" parent="Background"]
-tile_set = SubResource( 3 )
-format = 1
-tile_data = PoolIntArray( 131110, 3, 0, 131111, 1, 0, 196616, 1, 0, 196617, 2, 0, 196627, 2, 0, 196628, 1, 0, 196640, 1, 0, 196641, 3, 0, 262145, 0, 0, 262146, 1, 0, 262157, 3, 0, 262158, 5, 0, 262159, 2, 0, 262169, 1, 0, 262170, 3, 0, 262189, 2, 0 )
-
 [node name="Water" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Water"]
+motion_mirroring = Vector2( 3204, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Water/ParallaxLayer"]
 margin_right = 40.0
@@ -184,6 +178,7 @@ __meta__ = {
 [node name="Sand" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Sand"]
+motion_mirroring = Vector2( 3204, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Sand/ParallaxLayer"]
 margin_top = -4.0
@@ -194,7 +189,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TileMap2" type="TileMap" parent="."]
+[node name="Clouds2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Clouds2"]
+motion_mirroring = Vector2( 3204, 0 )
+
+[node name="Clouds" type="TileMap" parent="Clouds2/ParallaxLayer"]
+tile_set = SubResource( 3 )
+format = 1
+tile_data = PoolIntArray( 131110, 3, 0, 131111, 1, 0, 196616, 1, 0, 196617, 2, 0, 196627, 2, 0, 196628, 1, 0, 196640, 1, 0, 196641, 3, 0, 262145, 0, 0, 262146, 1, 0, 262157, 3, 0, 262158, 5, 0, 262159, 2, 0, 262169, 1, 0, 262170, 3, 0, 262189, 2, 0 )
+
+[node name="Ground" type="TileMap" parent="."]
 position = Vector2( 384, 256 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 128, 128 )
@@ -202,7 +207,7 @@ format = 1
 tile_data = PoolIntArray( -262101, 0, 0, -196565, 0, 0, -131029, 0, 0, -3, 0, 0, -65515, 0, 0, -65493, 0, 0, 65533, 0, 0, 21, 0, 0, 43, 0, 0, 131069, 0, 0, 65557, 0, 0, 65579, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131115, 0, 0, 196651, 0, 0, 262179, 0, 0, 262180, 0, 0, 262181, 0, 0, 262182, 0, 0, 262183, 0, 0, 262184, 0, 0, 262185, 0, 0, 262186, 0, 0, 262187, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 144.77, 437.22 )
+position = Vector2( 204.77, 481.22 )
 moving_force = {
 "air": 320,
 "ground": 500
