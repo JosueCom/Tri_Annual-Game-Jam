@@ -11,7 +11,6 @@ func init(id: String, current_state):
 func travel(id: String):
 	_current_state._exit()
 	_current_state = _states[id]
-	print(id)
 	_current_state._enter()
 	
 func add_state(id: String, state):

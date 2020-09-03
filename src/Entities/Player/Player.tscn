@@ -1,12 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/player/ice.png" type="Texture" id=1]
 [ext_resource path="res://src/Entities/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://src/Entities/Player/wet_area.tres" type="Material" id=3]
+[ext_resource path="res://assets/player/water_spot.png" type="Texture" id=4]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
-gravity = 180.0
+gravity = 300.0
+mass = 1.0
+moving_force = {
+"air": 320,
+"ground": 500
+}
+jumping_force = 400.0
 terminal_speed = Vector2( 500, 1000 )
+
+[node name="WetSpot" type="Particles2D" parent="."]
+position = Vector2( -6.06262, -8.12643 )
+scale = Vector2( 0.680001, 0.52 )
+emitting = false
+local_coords = false
+process_material = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 5.96046e-08, -48 )

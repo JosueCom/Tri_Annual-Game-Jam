@@ -7,6 +7,9 @@ class Walking extends State:
 		var out = .init(entity)
 		return out
 	
+	func _enter() -> void:
+		_entity.get_node("WetSpot").emitting = true
+	
 	func _physics_process_(delta: float) -> void:
 		
 		_entity.move(dir, delta, _entity.moving_force.ground)
@@ -27,6 +30,9 @@ class Walking extends State:
 			_entity.flip_h(true)
 		elif(abs(_entity._velocity.x) < 2):
 			_state_machine.travel("idle")
+	
+	func _exit() -> void:
+		_entity.get_node("WetSpot").emitting = false
 
 class Falling extends State:
 	var dir := Vector2.ZERO
