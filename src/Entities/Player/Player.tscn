@@ -6,9 +6,10 @@
 [ext_resource path="res://assets/player/water_spot.png" type="Texture" id=4]
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 2 )
-gravity = 350.0
-mass = 1.0
+gravity = 600.0
 moving_force = {
 "air": 320,
 "ground": 500
@@ -32,11 +33,18 @@ process_material = ExtResource( 3 )
 texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 5.96046e-08, -48 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 0, -24 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 position = Vector2( -1.66855, 1.00113 )
-polygon = PoolVector2Array( 36.765, -17.5242, -2.27907, -1.17245, -22.3017, -10.1826, -38.9872, -26.8681, -39.3209, -80.5954, -0.610504, -91.9416, 38.4335, -78.2595 )
+polygon = PoolVector2Array( 19.6686, -9.75113, -1.83145, -1.00113, -18.5814, -15.0011, -18.3314, -40.5011, 1.41855, -47.2511, 19.6686, -40.2511 )
+
+[node name="Flippable" type="Node2D" parent="."]
+
+[node name="WallDetector" type="RayCast2D" parent="Flippable"]
+position = Vector2( 0, -17.5198 )
+enabled = true
+cast_to = Vector2( 25, 0 )
