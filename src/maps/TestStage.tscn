@@ -181,7 +181,7 @@ __meta__ = {
 }
 
 [node name="Sand" type="ParallaxBackground" parent="Backgrounds"]
-scroll_base_scale = Vector2( 0.85, 0.2 )
+scroll_base_scale = Vector2( 0.1, 0.2 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Backgrounds/Sand"]
 motion_mirroring = Vector2( 3204, 0 )
@@ -196,7 +196,7 @@ __meta__ = {
 }
 
 [node name="Clouds" type="ParallaxBackground" parent="Backgrounds"]
-scroll_base_scale = Vector2( 0.45, 0.45 )
+scroll_base_scale = Vector2( 0.1, 0.3 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Backgrounds/Clouds"]
 motion_mirroring = Vector2( 3204, 0 )

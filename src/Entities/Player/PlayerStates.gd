@@ -45,13 +45,13 @@ class Jumping extends State:
 		if _entity.is_on_wall() and not _entity.is_on_floor():
 			_entity.flip_h(not _entity.get_node("Sprite").flip_h)
 			_entity.direction *= -1
-		_entity._velocity.y = -700
+		_entity._velocity.y = -600
 		
 	func _physics_process_(delta: float) -> void:
 		_entity.move(_entity.direction, delta, _entity.moving_force.air)
 		
 	func _handle_input() -> void:
-		if(_entity._velocity.y >= 0 and not _entity.is_on_floor()):
+		if _entity._velocity.y >= 0 and not _entity.is_on_floor():
 			_state_machine.travel("falling")
 		elif Input.is_action_just_pressed("jump") and _entity.is_on_wall():
 			_state_machine.travel("jumping")
