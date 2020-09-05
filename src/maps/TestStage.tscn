@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://src/Entities/Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/env/water1.png" type="Texture" id=4]
 [ext_resource path="res://assets/env/clouds.png" type="Texture" id=5]
 [ext_resource path="res://src/Objects/Bamboos/1x5Bamboo.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Maps/TestStageEnvironment.tres" type="Environment" id=7]
+[ext_resource path="res://assets/env/sky1.png" type="Texture" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "clouds.png 0"
@@ -161,18 +163,25 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="PanoramaSky" id=4]
-
-[sub_resource type="Environment" id=5]
-background_mode = 1
-background_sky = SubResource( 4 )
-background_color = Color( 0.839216, 0.552941, 0.552941, 1 )
-background_energy = 5.85
-fog_enabled = true
+[sub_resource type="CanvasItemMaterial" id=4]
+blend_mode = 1
 
 [node name="TestStage" type="Node2D"]
 
 [node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="Sky" type="ParallaxBackground" parent="Backgrounds"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backgrounds/Sky"]
+motion_mirroring = Vector2( 3204, 600 )
+
+[node name="TextureRect" type="TextureRect" parent="Backgrounds/Sky/ParallaxLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Water" type="ParallaxBackground" parent="Backgrounds"]
 scroll_base_scale = Vector2( 0.1, 0.1 )
@@ -230,6 +239,7 @@ position = Vector2( 2032, 368 )
 rotation = -0.261799
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+material = SubResource( 4 )
 position = Vector2( 669.813, 336.896 )
 moving_force = {
 "air": 320,
@@ -251,4 +261,4 @@ smoothing_enabled = true
 smoothing_speed = 10.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 5 )
+environment = ExtResource( 7 )
