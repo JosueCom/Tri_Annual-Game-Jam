@@ -35,8 +35,8 @@ class Falling extends State:
 			_state_machine.travel("jumping")
 
 class Jumping extends State:
-	var dir := Vector2.ZERO
-
+	var feedback = Vector2(100, 0)
+	
 	func init(entity):
 		var out = .init(entity)
 		return out
@@ -44,7 +44,9 @@ class Jumping extends State:
 	func _enter() -> void:
 		if _entity.is_on_wall() and not _entity.is_on_floor():
 			_entity.flip_h(not _entity.get_node("Sprite").flip_h)
-			_entity.direction *= -1
+			_entity.direction.x *= -1
+			_entity.move(_entity.direction, 1, feedback)
+			
 		_entity._velocity.y = -600
 		
 	func _physics_process_(delta: float) -> void:
