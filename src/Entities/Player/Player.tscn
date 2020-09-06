@@ -22,6 +22,7 @@ jumping_force = 400.0
 terminal_speed = Vector2( 500, 1000 )
 
 [node name="WetSpot" type="Particles2D" parent="."]
+visible = false
 position = Vector2( -0.306976, -0.283691 )
 scale = Vector2( 0.680002, 0.52 )
 emitting = false
