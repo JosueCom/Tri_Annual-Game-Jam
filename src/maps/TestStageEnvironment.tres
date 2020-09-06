@@ -1,9 +1,9 @@
 [gd_resource type="Environment" load_steps=2 format=2]
 
-[sub_resource type="PanoramaSky" id=4]
+[sub_resource type="PanoramaSky" id=1]
 
 [resource]
 background_mode = 4
-background_sky = SubResource( 4 )
+background_sky = SubResource( 1 )
 background_color = Color( 0.784314, 0.278431, 0.278431, 1 )
 ambient_light_color = Color( 0.0196078, 0.772549, 0.207843, 1 )
