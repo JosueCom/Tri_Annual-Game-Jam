@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/player/water_spot.png" type="Texture" id=4]
 
 [sub_resource type="Curve" id=1]
-_data = [ Vector2( 0, 0.154545 ), 0.0, 2.68108, 0, 0, Vector2( 1, 0.653409 ), 0.581818, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.427273 ), 0.0, 2.68108, 0, 0, Vector2( 1, 0.653409 ), 0.581818, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=2]
 curve = SubResource( 1 )
@@ -24,14 +24,14 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 2.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 2.0
+scale = 4.0
 scale_random = 0.05
 scale_curve = SubResource( 2 )
 color = Color( 0.631373, 0.968627, 0.976471, 1 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 script = ExtResource( 2 )
 gravity = 800.0
 moving_force = {
@@ -57,10 +57,11 @@ process_material = ExtResource( 3 )
 texture = ExtResource( 4 )
 
 [node name="Mist" type="Particles2D" parent="."]
-position = Vector2( 1.76778, -20.8596 )
+position = Vector2( -0.591919, -24.1632 )
 amount = 50
 lifetime = 2.0
 speed_scale = 1.34
+local_coords = false
 process_material = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]

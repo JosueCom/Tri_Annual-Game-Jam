@@ -6,6 +6,7 @@
 extents = Vector2( 318.157, 16.5298 )
 
 [node name="Bamboo" type="StaticBody2D"]
+collision_layer = 8
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 4.96, 0.259126 )

@@ -10,6 +10,6 @@ extends StaticBody2D
 func _ready() -> void:
 	var tween = get_node("Tween")
 	tween.interpolate_property($Sprite, "rotation_degrees",
-			0, 360, 1,
+			0, 360, 5,
 			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
